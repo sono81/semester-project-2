@@ -199,7 +199,7 @@ tilesWrap.appendChild(tileDiv);
 })
 
 
-// logics
+// Make it move
 const button = document.getElementById('btn');
 const token = document.getElementById('token');
 
