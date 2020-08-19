@@ -1,0 +1,100 @@
+/* Character Select */
+
+body {
+    background: linear-gradient(to bottom, #191b1b 50%, #3e2410 100%);
+}
+
+html,
+p,
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #e6e4e4;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.character {
+    background-color: #e6e4e4;
+    width: 300px;
+    display: inline-block;
+    border: 5px solid #3e2410;
+    margin: 20px;
+}
+
+.character img {
+    max-width: 300px;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.name {
+    font-size: 24px;
+}
+
+.culture {
+    font-size: 18px;
+}
+
+.info {
+    text-align: center;
+    background-color: #3e2410;
+    color: #e6e4e4;
+}
+
+.info p {
+    font-size: 2em;
+}
+
+footer {
+    height: 150px;
+}
+
+/* Board Game */
+
+body {
+    background: #191b1b;
+}
+
+#token {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    margin: 6px;
+    background: blue;
+}
+
+.tiles {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+}
+
+.dice {
+    position: absolute;
+    top: 280px;
+    left: 600px;
+    border: 3px solid #cccccc;
+    border-radius: 14px;
+}
+
+#btn {
+    position: absolute;
+    top: 400px;
+    left: 619px
+}
+
+/* Game Over */
