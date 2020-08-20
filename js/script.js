@@ -17,7 +17,7 @@ let charactersSelected = 0;
 function getData(characters) {
     var cards = '';
     playerSelectInfo.innerHTML += `<h1>Select character</h1>
-                                    <p>Player${charactersSelected+1}</p>`
+                                    <p>Player ${charactersSelected+1}</p>`
     for (i = 0; i < characters.length; i++) {
         cards += `<div class="character" id="character${i}" onclick="selectCard(this, ${characters[i].Id})">
                                      <img src="../images/characters/${characters[i].Id+'.png'}">
@@ -30,11 +30,20 @@ function getData(characters) {
     document.querySelector('.wrapper').innerHTML = cards;
 }
 
-//function selectCard(card, charactersSelected){
-//    card.style.border = '5px solid green';
-//
-//    if (card.style.border == '5px solid green') {
-//        playerSelectInfo.innerHTML = `<h1>Select character</h1>
-//                                    <p>Player2</p>`
-//    }
-//}
+function selectCard(card, charactersId){
+
+    charactersSelected++
+
+    if (charactersSelected === 1) {
+        playerSelectInfo.innerHTML = `<h1>Select character</h1>
+                                    <p>Player ${charactersSelected+1}</p>`
+                                    card.style.border = '5px solid green';                                
+    } else if (charactersSelected = 2) {
+        card.style.border = '5px solid blue';
+        window.location.href = 'board.html';
+    } 
+
+    console.log(charactersId);
+    console.log('caracter' + charactersSelected);
+
+}
