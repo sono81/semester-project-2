@@ -40,9 +40,10 @@ function selectCard(card, charactersId) {
         playerSelectInfo.innerHTML = `<h1>Select character</h1>
                                     <p>Player ${charactersSelected+1}</p>`
         card.style.border = '5px solid green';
-        localStorage.setItem('player_id', charactersId);
+        localStorage.setItem('player_one_id', charactersId);
     } else if (charactersSelected === 2) {
         card.style.border = '5px solid blue';
+        localStorage.setItem('player_two_id', charactersId);
         playerSelectInfo.innerHTML = `<button id="btn_start" onclick="window.location.href = 'board.html';">Start Game</button>`;
     } else if (charactersSelected > 2) {
         card.style.border = '5px solid #3e2410';
@@ -211,7 +212,8 @@ const tiles = [{
     }
 ]
 
-let position = 0; //Starting position
+let position1 = 0; //Starting position 1
+let position2 = 0; //Starting position 2
 let diceValue = [];
 
 function rollDice() {
@@ -246,7 +248,7 @@ function updateDice(roll) {
 //create tiles
 const tilesWrap = document.getElementById('tiles');
 
-tiles.forEach(function(tile) {
+tiles.forEach(function (tile) {
     const tileDiv = document.createElement('div');
     tileDiv.className = 'tiles';
     tileDiv.id = tile.id;
@@ -258,27 +260,63 @@ tiles.forEach(function(tile) {
 
 // Create buttons and make things move
 const rollButton = document.getElementById('btn');
-const token = document.querySelector('#token');
-token.style.backgroundImage = 'url(../images/tokens/' + localStorage.getItem('player_id') + '_btn.png)';
+const tokenOne = document.querySelector('#token-one');
+const tokenTwo = document.querySelector('#token-two');
+tokenOne.style.backgroundImage = 'url(../images/tokens/' + localStorage.getItem('player_one_id') + '_btn.png)';
+tokenTwo.style.backgroundImage = 'url(../images/tokens/' + localStorage.getItem('player_two_id') + '_btn.png)';
+let turn = 1;
 
 
-rollButton.addEventListener('click', function() {
-    const roll = rollDice();
-    updateDice(roll);
+rollButton.addEventListener('click', function () {
+    if (turn == 1) {
+        const roll = rollDice();
+        updateDice(roll);
 
-    if (position + roll >= tiles.length) {
-        position = tiles.length - 1;
+        if (position1 + roll >= tiles.length) {
+            position1 = tiles.length - 1;
+        } else {
+            position1 += roll;
+        }
+
+        tokenOne.style.left = tiles[position1].left + 'px';
+        tokenOne.style.top = tiles[position1].top + 'px';
+        if (roll == 6) {
+            turn = 1;
+        } else {
+            turn = 2;
+        }
+
+        if (position1 === tiles.length - 1) {
+            setTimeout(function () {
+                alert('GG Player1!')
+            }, 1);
+        }
     } else {
-        position += roll;
+        const roll = rollDice();
+        updateDice(roll);
+
+        if (position2 + roll >= tiles.length) {
+            position2 = tiles.length - 1;
+        } else {
+            position2 += roll;
+        }
+
+        tokenTwo.style.left = tiles[position2].left + 'px';
+        tokenTwo.style.top = tiles[position2].top + 'px';
+        if (roll == 6) {
+            turn = 2;
+        } else {
+            turn = 1;
+        }
+
+        if (position2 === tiles.length - 1) {
+            setTimeout(function () {
+                alert('GG Player2!')
+            }, 1);
+        }
     }
 
-    token.style.left = tiles[position].left + 'px';
-    token.style.top = tiles[position].top + 'px';
-
-    if (position === tiles.length - 1) {
-        setTimeout(function(){
-            alert('GG Well Played!')
-        }, 1);
-    }
 
 });
+
+//find out how to make it change turns next
