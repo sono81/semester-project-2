@@ -1,11 +1,13 @@
 /* Character Select */
 
 body {
-    background: linear-gradient(to bottom, #191b1b 50%, #3e2410 100%);
+    background: #191b1b;
 }
 
 html,
+body,
 p,
+h1,
 footer {
     margin: 0;
     padding: 0;
@@ -49,10 +51,20 @@ h1 {
     text-align: center;
     background-color: #3e2410;
     color: #e6e4e4;
+    height: 150px;
 }
 
 .info p {
     font-size: 2em;
+}
+
+#btn_start {
+    height: 80px;
+    background: #3e2410;
+    color: beige;
+    border: 3px solid beige;
+    border-radius: 10px;
+    margin-top: 35px;
 }
 
 footer {
@@ -60,10 +72,6 @@ footer {
 }
 
 /* Board Game */
-
-body {
-    background: #191b1b;
-}
 
 #token {
     position: absolute;
@@ -73,7 +81,9 @@ body {
     width: 90px;
     border-radius: 50%;
     margin: 6px;
-    background: blue;
+    background: green;
+    background-size: 90px;
+    background-repeat: no-repeat;
 }
 
 .tiles {
