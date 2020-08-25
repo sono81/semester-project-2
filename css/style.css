@@ -81,7 +81,7 @@ footer {
     width: 90px;
     border-radius: 50%;
     margin: 6px;
-    background: green;
+    background: black;
     background-size: 90px;
     background-repeat: no-repeat;
 }
@@ -94,7 +94,7 @@ footer {
     width: 90px;
     border-radius: 50%;
     margin: 6px;
-    background: blue;
+    background: black;
     background-size: 90px;
     background-repeat: no-repeat;
 }
