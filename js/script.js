@@ -318,5 +318,3 @@ rollButton.addEventListener('click', function () {
 
 
 });
-
-//find out how to make it change turns next
