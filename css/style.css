@@ -73,7 +73,7 @@ footer {
 
 /* Board Game */
 
-#token {
+#token-one {
     position: absolute;
     top: 30px;
     left: 30px;
@@ -82,6 +82,19 @@ footer {
     border-radius: 50%;
     margin: 6px;
     background: green;
+    background-size: 90px;
+    background-repeat: no-repeat;
+}
+
+#token-two {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    margin: 6px;
+    background: blue;
     background-size: 90px;
     background-repeat: no-repeat;
 }
