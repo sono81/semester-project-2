@@ -23,7 +23,7 @@ function getData(characters) {
     for (i = 0; i < characters.length; i++) {
         cards += `<div class="character" id="character${i}" onclick="selectCard(this, ${characters[i].Id})">
                                      <img src="../images/characters/${characters[i].Id+'.png'}">
-                                     <div class="info">
+                                     <div class="character_info">
                                          <p class="name">${characters[i].Name}</p>
                                          <p class="culture">${characters[i].Culture}</p>
                                      </div>
@@ -259,13 +259,14 @@ tiles.forEach(function (tile) {
 
 
 // Create buttons and make things move
-const rollButton = document.getElementById('btn');
+const rollButton = document.querySelector('#btn');
 const tokenOne = document.querySelector('#token-one');
 const tokenTwo = document.querySelector('#token-two');
+const gameTextOne = document.querySelector('.game-text_p1')
+const gameTextTwo = document.querySelector('.game-text_p2')
 tokenOne.style.backgroundImage = 'url(../images/tokens/' + localStorage.getItem('player_one_id') + '_btn.png)';
 tokenTwo.style.backgroundImage = 'url(../images/tokens/' + localStorage.getItem('player_two_id') + '_btn.png)';
 let turn = 1;
-
 
 rollButton.addEventListener('click', function () {
     if (turn == 1) {
@@ -280,10 +281,46 @@ rollButton.addEventListener('click', function () {
 
         tokenOne.style.left = tiles[position1].left + 'px';
         tokenOne.style.top = tiles[position1].top + 'px';
+
         if (roll == 6) {
             turn = 1;
         } else {
             turn = 2;
+        }
+
+        if (position1 === 5) {
+            gameTextOne.innerHTML = `You trusted Littlefinger, mistakes were made... (-3 on your next roll)`
+            position1 = 2;
+        }
+
+        if (position1 === 9) {
+            gameTextOne.innerHTML = `Ride the dragons to save some time. (+5 on your next roll)`
+            position1 = 14;
+        }
+
+        if (position1 === 13) {
+            gameTextOne.innerHTML = `Joffrey lost his mind again, run! (-5 on your next roll)`
+            position1 = 8;
+        }
+
+        if (position1 === 18) {
+            gameTextOne.innerHTML = `You are chased by white walkers, escape them! (-3 on your next roll)`
+            position1 = 15;
+        }
+
+        if (position1 === 22) {
+            gameTextOne.innerHTML = `To speed up you throw yourself over the wall (+3 on your next roll)`
+            position2 = 25;
+        }
+
+        if (position1 === 25) {
+            gameTextOne.innerHTML = `You chrashed into the wall, better luck next time. (-4 on your next roll)`
+            position1 = 21;
+        }
+
+        if (position1 === 29) {
+            gameTextOne.innerHTML = `You're on fire, run for your life! (-17 on your next roll)`
+            position1 = 12;
         }
 
         if (position1 === tiles.length - 1) {
@@ -303,10 +340,46 @@ rollButton.addEventListener('click', function () {
 
         tokenTwo.style.left = tiles[position2].left + 'px';
         tokenTwo.style.top = tiles[position2].top + 'px';
+
         if (roll == 6) {
             turn = 2;
         } else {
             turn = 1;
+        }
+        
+        if (position2 === 5) {
+            gameTextTwo.innerHTML = `You trusted Littlefinger, mistakes were made... (-3 on your next roll)`
+            position2 = 2;
+        }
+
+        if (position2 === 9) {
+            gameTextTwo.innerHTML = `Ride the dragons to save some time. (+5 on your next roll)`
+            position2 = 14;
+        }
+
+        if (position2 === 13) {
+            gameTextTwo.innerHTML = `Joffrey lost his mind again, run! (-5 on your next roll)`
+            position2 = 8;
+        }
+
+        if (position2 === 18) {
+            gameTextTwo.innerHTML = `You are chased by white walkers, escape them! (-3 on your next roll)`
+            position2 = 15;
+        }
+
+        if (position2 === 22) {
+            gameTextTwo.innerHTML = `To speed up you throw yourself over the wall (+3 on your next roll)`
+            position2 = 25;
+        }
+
+        if (position2 === 25) {
+            gameTextTwo.innerHTML = `You chrashed into the wall, better luck next time. (-4 on your next roll)`
+            position2 = 21;
+        }
+
+        if (position2 === 29) {
+            gameTextTwo.innerHTML = `You're on fire, run for your life! (-17 on your next roll)`
+            position2 = 12;
         }
 
         if (position2 === tiles.length - 1) {
@@ -316,5 +389,6 @@ rollButton.addEventListener('click', function () {
         }
     }
 
+    console.log(position1 + '+' + position2);
 
 });
