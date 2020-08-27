@@ -25,18 +25,23 @@ h1 {
 
 .character {
     background-color: #e6e4e4;
-    width: 300px;
+    width: 200px;
     display: inline-block;
     border: 5px solid #3e2410;
-    margin: 20px;
+    margin: 15px;
 }
 
 .character img {
-    max-width: 300px;
-    max-height: 200px;
+    max-width: 200px;
+    max-height: 150px;
     display: block;
     margin: 0 auto;
     margin-top: 10px;
+}
+
+.character_info {
+    background-color: #3e2410;
+    color: #e6e4e4;
 }
 
 .name {
@@ -103,13 +108,13 @@ footer {
     position: absolute;
     height: 100px;
     width: 100px;
-    border: 1px solid red;
+    border: 1px solid burlywood;
 }
 
 .dice {
     position: absolute;
     top: 280px;
-    left: 600px;
+    left: 400px;
     border: 3px solid #cccccc;
     border-radius: 14px;
 }
@@ -117,7 +122,34 @@ footer {
 #btn {
     position: absolute;
     top: 400px;
-    left: 619px
+    left: 419px
+}
+
+.text-wrap {
+    position: absolute;
+    top: 240px;
+    left: 550px;
+}
+
+.text-wrap p {
+    color: #e6e4e4;
+    margin: 15px 0 5px;
+}
+
+.game-text_p1 {
+    padding: 5px;
+    background-color: beige;
+    height: 60px;
+    width: 400px;
+    border-radius: 14px;
+}
+
+.game-text_p2 {
+    padding: 5px;
+    background-color: beige;
+    height: 60px;
+    width: 400px;
+    border-radius: 14px;
 }
 
 /* Game Over */
