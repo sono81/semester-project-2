@@ -325,7 +325,8 @@ rollButton.addEventListener('click', function () {
 
         if (position1 === tiles.length - 1) {
             setTimeout(function () {
-                alert('GG Player1!')
+                alert('GG Player1!');
+                localStorage.setItem('winner', 'Player 1');
             }, 1);
         }
     } else {
@@ -384,7 +385,8 @@ rollButton.addEventListener('click', function () {
 
         if (position2 === tiles.length - 1) {
             setTimeout(function () {
-                alert('GG Player2!')
+                alert('GG Player2!');
+                localStorage.setItem('winner', 'Player 2');
             }, 1);
         }
     }
