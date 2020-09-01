@@ -53,10 +53,14 @@ h1 {
 }
 
 .info {
-    text-align: center;
     background-color: #3e2410;
     color: #e6e4e4;
     height: 150px;
+    text-align: center;
+}
+
+.info h1 {
+    line-height: 1.8em;
 }
 
 .info p {
@@ -65,11 +69,13 @@ h1 {
 
 #btn_start {
     height: 80px;
-    background: #3e2410;
-    color: beige;
-    border: 3px solid beige;
+    background: beige;
+    color: #191b1b;
+    border: 3px solid #191b1b;
     border-radius: 10px;
     margin-top: 35px;
+    font-size: 1.8em;
+    font-weight: 600;
 }
 
 footer {
@@ -153,3 +159,43 @@ footer {
 }
 
 /* Game Over */
+
+
+
+/* Under 550px width */
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .info {
+        height: 80px;
+    }
+
+    .info p {
+        font-size: 1.5em;
+    }
+
+    .character {
+        width: 130px;
+    }
+
+    .character img {
+        max-width: 130px;
+        max-height: 100px;
+    }
+
+    .name {
+        font-size: 1em;
+    }
+
+    .culture {
+        font-size: 0.8em;
+    }
+
+    #btn_start {
+        height: 60px;
+        margin-top: 10px;
+    }
+}
