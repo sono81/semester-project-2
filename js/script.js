@@ -50,7 +50,6 @@ function selectCard(card, charactersId) {
     }
     console.log(charactersId);
     console.log('caracter' + charactersSelected);
-
 }
 
 // Board Game
@@ -325,8 +324,9 @@ rollButton.addEventListener('click', function () {
 
         if (position1 === tiles.length - 1) {
             setTimeout(function () {
-                alert('GG Player1!');
+                //alert('GG Player1!');
                 localStorage.setItem('winner', 'Player 1');
+                window.location.href = 'gameover.html';
             }, 1);
         }
     } else {
@@ -385,12 +385,16 @@ rollButton.addEventListener('click', function () {
 
         if (position2 === tiles.length - 1) {
             setTimeout(function () {
-                alert('GG Player2!');
+                //alert('GG Player2!');
                 localStorage.setItem('winner', 'Player 2');
+                window.location.href = 'gameover.html';
             }, 1);
         }
     }
 
     console.log(position1 + '+' + position2);
-
 });
+
+
+/* Game over screen */
+
