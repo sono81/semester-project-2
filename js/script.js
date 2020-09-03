@@ -347,7 +347,7 @@ rollButton.addEventListener('click', function () {
         } else {
             turn = 1;
         }
-        
+
         if (position2 === 5) {
             gameTextTwo.innerHTML = `You trusted Littlefinger, mistakes were made... (-3 on your next roll)`
             position2 = 2;
@@ -395,6 +395,4 @@ rollButton.addEventListener('click', function () {
     console.log(position1 + '+' + position2);
 });
 
-
-/* Game over screen */
 
