@@ -72,9 +72,23 @@ h1 {
     font-size: 2em;
 }
 
+.logo {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.logo_board {
+    position: absolute;
+    width: 180px;
+    top: 30px;
+    left: 1250px;
+}
+
 #btn_start {
     height: 80px;
-    background: beige;
+    background: #e6e4e4;
     color: #191b1b;
     border: 3px solid #191b1b;
     border-radius: 10px;
@@ -253,6 +267,11 @@ footer {
     margin-top: 40px;
 }
 
+#credits {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
 
 /* Under 550px width */
 
@@ -289,5 +308,9 @@ footer {
     #btn_start {
         height: 60px;
         margin-top: 10px;
+    }
+
+    .logo {
+        max-width: 150px;
     }
 }
