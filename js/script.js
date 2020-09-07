@@ -245,16 +245,18 @@ function updateDice(roll) {
 };
 
 //create tiles
-const tilesWrap = document.getElementById('tiles');
+const tilesWrap = document.querySelector('#tiles');
 
 tiles.forEach(function (tile) {
     const tileDiv = document.createElement('div');
     tileDiv.className = 'tiles';
-    tileDiv.id = tile.id;
+    tileDiv.id = 'id' + tile.id;
     tileDiv.style.left = tile.left + 'px';
     tileDiv.style.top = tile.top + 'px';
     tilesWrap.appendChild(tileDiv);
 });
+
+
 
 
 // Create buttons and make things move
@@ -268,6 +270,8 @@ tokenTwo.style.backgroundImage = 'url(../images/tokens/' + localStorage.getItem(
 let turn = 1;
 
 rollButton.addEventListener('click', function () {
+    gameTextOne.innerHTML = ``;
+    gameTextTwo.innerHTML = ``;
     if (turn == 1) {
         const roll = rollDice();
         updateDice(roll);
@@ -391,8 +395,4 @@ rollButton.addEventListener('click', function () {
             }, 1);
         }
     }
-
-    console.log(position1 + '+' + position2);
 });
-
-
