@@ -22,7 +22,7 @@ function getData(characters) {
                                     <p>Player ${charactersSelected+1}</p>`
     for (i = 0; i < characters.length; i++) {
         cards += `<div class="character" id="character${i}" onclick="selectCard(this, ${characters[i].Id})">
-                                     <img src="../images/characters/${characters[i].Id+'.png'}">
+                                     <img src="images/characters/${characters[i].Id+'.png'}">
                                      <div class="character_info">
                                          <p class="name">${characters[i].Name}</p>
                                          <p class="culture">${characters[i].Culture}</p>
@@ -229,17 +229,17 @@ function updateDice(roll) {
     function diceNumber(number) {
         diceImgPosition.innerHTML = `${number}`;
         if (`${number}` == 1) {
-            diceImgPosition.innerHTML = `<img src="/images/dice/dice_1.png" class="dice"></img>`;
+            diceImgPosition.innerHTML = `<img src="images/dice/dice_1.png" class="dice"></img>`;
         } else if (`${number}` == 2) {
-            diceImgPosition.innerHTML = `<img src="/images/dice/dice_2.png" class="dice"></img>`;
+            diceImgPosition.innerHTML = `<img src="images/dice/dice_2.png" class="dice"></img>`;
         } else if (`${number}` == 3) {
-            diceImgPosition.innerHTML = `<img src="/images/dice/dice_3.png" class="dice"></img>`;
+            diceImgPosition.innerHTML = `<img src="images/dice/dice_3.png" class="dice"></img>`;
         } else if (`${number}` == 4) {
-            diceImgPosition.innerHTML = `<img src="/images/dice/dice_4.png" class="dice"></img>`;
+            diceImgPosition.innerHTML = `<img src="images/dice/dice_4.png" class="dice"></img>`;
         } else if (`${number}` == 5) {
-            diceImgPosition.innerHTML = `<img src="/images/dice/dice_5.png" class="dice"></img>`;
+            diceImgPosition.innerHTML = `<img src="images/dice/dice_5.png" class="dice"></img>`;
         } else if (`${number}` == 6) {
-            diceImgPosition.innerHTML = `<img src="/images/dice/dice_6.png" class="dice"></img>`;
+            diceImgPosition.innerHTML = `<img src="images/dice/dice_6.png" class="dice"></img>`;
         }
     };
 };
@@ -265,8 +265,8 @@ const tokenOne = document.querySelector('#token-one');
 const tokenTwo = document.querySelector('#token-two');
 const gameTextOne = document.querySelector('.game-text_p1')
 const gameTextTwo = document.querySelector('.game-text_p2')
-tokenOne.style.backgroundImage = 'url(../images/tokens/' + localStorage.getItem('player_one_id') + '_btn.png)';
-tokenTwo.style.backgroundImage = 'url(../images/tokens/' + localStorage.getItem('player_two_id') + '_btn.png)';
+tokenOne.style.backgroundImage = 'url(images/tokens/' + localStorage.getItem('player_one_id') + '_btn.png)';
+tokenTwo.style.backgroundImage = 'url(images/tokens/' + localStorage.getItem('player_two_id') + '_btn.png)';
 let turn = 1;
 
 rollButton.addEventListener('click', function () {
