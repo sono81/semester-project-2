@@ -17,9 +17,9 @@ if (localStorage.getItem('winner') === 'Player 1') {
 const push_text = 0.8;
 let canvas = document.querySelector('#credits');
 let ctx = canvas.getContext('2d');
-ctx.font = '28px Walter Turncoat'
+ctx.font = '28px Roboto'
 let x = 500;
-let content = 'Thank you for playing "Fall of The Wall! Design, coding, images and music by Sondre Nordjore 2020';
+let content = 'Thank you for playing "Fall of The Wall! Design, coding and images by Sondre Nordjore 2020';
 let textWidth = ctx.measureText(content).width;
 ctx.fillStyle = '#e6e4e4';
 ctx.fillText(content, x, 50);
