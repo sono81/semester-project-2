@@ -142,70 +142,65 @@ const tiles = [{
     {
         left: 930,
         top: 530,
-        id: 17
+        id: 18
     },
     {
         left: 1030,
         top: 530,
-        id: 18
+        id: 19
     },
     {
         left: 1130,
         top: 530,
-        id: 19
-    },
-    {
-        left: 1230,
-        top: 430,
         id: 20
     },
     {
-        left: 1330,
+        left: 1230,
         top: 430,
         id: 21
     },
     {
         left: 1330,
-        top: 330,
+        top: 430,
         id: 22
     },
     {
         left: 1330,
-        top: 230,
+        top: 330,
         id: 23
     },
     {
-        left: 1230,
+        left: 1330,
         top: 230,
         id: 24
     },
     {
+        left: 1230,
+        top: 230,
+        id: 25
+    },
+    {
         left: 1130,
         top: 130,
-        id: 25
+        id: 26
     },
     {
         left: 1030,
         top: 30,
-        id: 26
+        id: 27
     },
     {
         left: 930,
         top: 30,
-        id: 27
+        id: 28
     },
     {
         left: 830,
         top: 30,
-        id: 28
-    },
-    {
-        left: 730,
-        top: 30,
         id: 29
     },
     {
-        left: 630,
+        left: 730,
         top: 30,
         id: 30
     }
@@ -306,22 +301,22 @@ rollButton.addEventListener('click', function () {
             position1 = 8;
         }
 
-        if (position1 === 18) {
+        if (position1 === 17) {
             gameTextOne.innerHTML = `You are chased by white walkers, escape them! (-3 on your next roll)`
             position1 = 15;
         }
 
-        if (position1 === 22) {
+        if (position1 === 21) {
             gameTextOne.innerHTML = `To speed up you throw yourself over the wall (+3 on your next roll)`
             position2 = 25;
         }
 
-        if (position1 === 25) {
+        if (position1 === 24) {
             gameTextOne.innerHTML = `You chrashed into the wall, better luck next time. (-4 on your next roll)`
             position1 = 21;
         }
 
-        if (position1 === 29) {
+        if (position1 === 28) {
             gameTextOne.innerHTML = `You're on fire, run for your life! (-17 on your next roll)`
             position1 = 12;
         }
@@ -367,22 +362,22 @@ rollButton.addEventListener('click', function () {
             position2 = 8;
         }
 
-        if (position2 === 18) {
+        if (position2 === 17) {
             gameTextTwo.innerHTML = `You are chased by white walkers, escape them! (-3 on your next roll)`
             position2 = 15;
         }
 
-        if (position2 === 22) {
+        if (position2 === 21) {
             gameTextTwo.innerHTML = `To speed up you throw yourself over the wall (+3 on your next roll)`
             position2 = 25;
         }
 
-        if (position2 === 25) {
+        if (position2 === 24) {
             gameTextTwo.innerHTML = `You chrashed into the wall, better luck next time. (-4 on your next roll)`
             position2 = 21;
         }
 
-        if (position2 === 29) {
+        if (position2 === 28) {
             gameTextTwo.innerHTML = `You're on fire, run for your life! (-17 on your next roll)`
             position2 = 12;
         }
