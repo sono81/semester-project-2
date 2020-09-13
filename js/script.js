@@ -17,7 +17,7 @@ const card = document.querySelector('.character');
 let charactersSelected = 0;
 
 function getData(characters) {
-    var cards = '';
+    let cards = '';
     playerSelectInfo.innerHTML += `<h1>Select character</h1>
                                     <p>Player ${charactersSelected+1}</p>`
     for (i = 0; i < characters.length; i++) {
@@ -29,7 +29,7 @@ function getData(characters) {
                                      </div>
                                  </div>`
     }
-    document.querySelector('.wrapper').innerHTML = cards;
+    wrapper.innerHTML = cards;
 }
 
 function selectCard(card, charactersId) {
@@ -48,8 +48,6 @@ function selectCard(card, charactersId) {
     } else if (charactersSelected > 2) {
         card.style.border = '5px solid #3e2410';
     }
-    console.log(charactersId);
-    console.log('caracter' + charactersSelected);
 }
 
 // Board Game
@@ -308,7 +306,7 @@ rollButton.addEventListener('click', function () {
 
         if (position1 === 21) {
             gameTextOne.innerHTML = `To speed up you throw yourself over the wall (+3 on your next roll)`
-            position2 = 25;
+            position1 = 25;
         }
 
         if (position1 === 24) {
@@ -384,7 +382,6 @@ rollButton.addEventListener('click', function () {
 
         if (position2 === tiles.length - 1) {
             setTimeout(function () {
-                //alert('GG Player2!');
                 localStorage.setItem('winner', 'Player 2');
                 window.location.href = 'gameover.html';
             }, 1);
